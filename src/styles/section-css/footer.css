@@ -1,0 +1,222 @@
+/*============================================================================================
+	Start Footer Area
+==============================================================================================*/
+.tc-footer {
+  padding-bottom: 0px;
+}
+.tc-footer__inner {
+  max-width: 100%;
+  margin: 0;
+  border-radius: 40px 40px 0 0;
+}
+
+.tc-footer__top {
+  padding: 90px 0px 70px;
+}
+.tc-footer__desc {
+  margin-top: 32px;
+}
+.tc-footer__desc-title {
+  font-size: 24px;
+  color: var(--white-color);
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 12px;
+}
+.tc-footer__desc-text {
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.tc-footer__desc-btn {
+  margin-top: 32px;
+}
+.tc-footer__widget {
+  margin-top: 40px;
+}
+.tc-footer__widget.contact {
+  margin-left: 50px;
+}
+.tc-footer__widget.about-links {
+  margin-left: 60px;
+}
+.tc-footer__widget-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--white-color);
+  margin-bottom: 28px;
+}
+.tc-footer__widget-links li {
+  margin-bottom: 12px;
+}
+.tc-footer__widget-links li:last-child {
+  margin: 0;
+}
+.tc-footer__widget-links li a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #9ca3af;
+}
+.tc-footer__widget-links li a:hover {
+  color: var(--white-color);
+}
+.tc-footer__widget-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #9ca3af;
+}
+.tc-footer__widget-social {
+  margin-top: 28px;
+}
+.tc-footer__widget-social li {
+  display: inline-block;
+  margin-right: 6px;
+}
+.tc-footer__widget-social li:last-child {
+  margin: 0;
+}
+.tc-footer__widget-social li a {
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  transition: all 0.3s ease;
+}
+.tc-footer__widget-social li a:hover {
+  background: var(--primary-color);
+}
+.tc-footer__widget-social li svg path {
+  transition: all 0.3s ease;
+}
+.tc-footer__widget-social li a:hover svg path {
+  fill: var(--white-color);
+  fill-opacity: 1;
+}
+.tc-footer__bottom {
+  padding-bottom: 70px;
+}
+.tc-footer__big-text {
+  font-size: 150px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+  opacity: 0.4;
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: 0;
+}
+.tc-footer__copyright {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #9ca3af;
+  margin-top: 22px;
+}
+.tc-footer__copyright a:hover {
+  color: var(--primary-color);
+}
+
+@media only screen and (min-width: 1840px) {
+  .tc-footer__inner {
+    max-width: 1840px;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .tc-footer__inner {
+    margin: 0;
+    border-radius: 40px 40px 0px 0px;
+  }
+  .tc-footer {
+    padding-bottom: 0;
+  }
+  .tc-footer__top {
+    padding: 60px 40px;
+  }
+  .tc-footer__widget.about-links {
+    margin-left: 24px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .tc-footer__big-text {
+    font-size: 100px;
+  }
+  .tc-footer__widget.about-links {
+    margin-left: 20px;
+  }
+  .tc-footer__top {
+    padding: 50px 0px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tc-footer__widget.contact {
+    margin-left: 0;
+  }
+  .tc-footer__inner {
+    margin: 0 24px;
+  }
+  .tc-footer {
+    padding-bottom: 24px;
+  }
+  .tc-footer__big-text {
+    font-size: 80px;
+  }
+  .tc-footer__top {
+    padding: 16px 0px 56px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .tc-footer__inner {
+    margin: 0px 8px;
+  }
+  .tc-footer__top {
+    padding: 16px 0px 32px;
+  }
+  .tc-footer__widget.about-links {
+    margin-left: 0;
+  }
+  .tc-footer__widget-title {
+    margin-bottom: 16px;
+  }
+  .tc-footer__desc-title {
+    font-size: 20px;
+    line-height: 120%;
+  }
+  .tc-footer__desc {
+    margin-top: 24px;
+  }
+  .tc-footer__desc-btn {
+    margin-top: 20px;
+  }
+  .tc-footer__widget.contact {
+    margin-left: 0;
+  }
+  .tc-footer__widget-social {
+    margin-top: 24px;
+  }
+  .tc-footer__big-text {
+    font-size: 40px;
+  }
+  .tc-footer__bottom {
+    padding-bottom: 56px;
+  }
+  .tc-footer {
+    padding-bottom: 12px;
+  }
+}
+
+/*============================================================================================
+	End Footer Area
+==============================================================================================*/

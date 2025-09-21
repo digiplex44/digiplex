@@ -1,0 +1,105 @@
+/*============================================================================================
+	Start Features Area
+==============================================================================================*/
+.tc-features__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 112px;
+}
+.tc-feature__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  color: var(--white-color);
+  margin-bottom: 18px;
+}
+.tc-feature__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.tc-feature__btn {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--white-color);
+}
+.tc-feature__btn:hover {
+  color: var(--primary-color) !important;
+}
+.tc-feature__btn:hover svg {
+  transform: rotate(44deg);
+}
+.tc-feature__btn svg,
+.tc-feature__btn svg path {
+  transition: all 0.3s ease;
+}
+.tc-feature__btn:hover svg path {
+  fill: var(--primary-color);
+}
+
+/* Style 2  */
+.tc-features--style2 .tc-features__wrapper {
+  gap: 80px;
+}
+
+.tc-features--style2 .tc-feature__label {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  color: var(--title-color);
+  margin-bottom: 20px;
+  display: block;
+}
+.tc-features--style2 .tc-feature__title {
+  font-size: 60px;
+  line-height: 72px;
+  color: var(--title-color);
+  margin-bottom: 16px;
+}
+.tc-features--style2 .tc-feature__text {
+  color: var(--paragraph-color);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tc-features__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .tc-features__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+  .tc-feature__btn {
+    margin-top: 24px;
+  }
+  .tc-feature__title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .tc-features--style2 .tc-feature__label {
+    font-size: 18px;
+    line-height: 120%;
+    margin-bottom: 12px;
+  }
+  .tc-features--style2 .tc-feature__title {
+    font-size: 40px;
+    line-height: 120%;
+    margin-bottom: 8px;
+  }
+  .tc-features--style2 .tc-features__wrapper {
+    gap: 40px;
+  }
+}
+
+/*============================================================================================
+	End Features Area
+==============================================================================================*/

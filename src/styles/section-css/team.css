@@ -1,0 +1,308 @@
+/*============================================================================================
+	Start Team Area
+==============================================================================================*/
+.tc-team__item {
+  margin-top: 50px;
+}
+.tc-team__cover {
+  position: relative;
+  overflow: hidden;
+}
+.tc-team__img {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.tc-team__img img {
+  border-radius: 20px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.tc-team__item:hover .tc-team__img img {
+  transform: scale(1.04);
+}
+.tc-team__social {
+  position: absolute;
+  top: 0;
+  right: -56px;
+  border-radius: 0px 0px 0px 20px;
+  background: var(--white-color);
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.tc-team__item:hover .tc-team__social,
+.tc-team__social.show {
+  right: 0;
+}
+.tc-team__social::before,
+.tc-team__social::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.tc-team__social::before {
+  left: -20px;
+  top: -1px;
+  background-image: url("/assets/images/team/corner-shape-1.svg");
+}
+.tc-team__social::after {
+  right: -1px;
+  bottom: -19px;
+  background-image: url("/assets/images/team/corner-shape-2.svg");
+}
+.tc-team__social li {
+  margin-bottom: 8px;
+}
+.tc-team__social li:last-child {
+  margin: 0;
+}
+.tc-team__social li a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 100%;
+}
+.tc-team__social li a:hover {
+  background: var(--secondary-color);
+}
+.tc-team__social li svg path {
+  transition: all 0.3s ease;
+}
+.tc-team__social li a:hover svg path {
+  fill: var(--black-color);
+}
+.tc-team__info {
+  margin-top: 24px;
+}
+.tc-team__name {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  margin-bottom: 8px;
+  color: var(--title-color);
+}
+.tc-team__designation {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* CTA  */
+.tc-team-cta {
+  padding: 60px;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+.tc-team-cta__cont-top {
+  max-width: 460px;
+}
+.tc-team-cta__title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+.tc-team-cta__text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+.tc-team-cta__cont-btm {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 68px;
+  gap: 24px;
+}
+.tc-team-cta__number .big-number {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 68px;
+  margin: 0;
+}
+.tc-team-cta__number .number-text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+/* Team Page  */
+
+.team-sec-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.team-sec-head .title {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 58px;
+  margin: 0;
+}
+.team-sec-head__info .total-team {
+  margin-top: 24px;
+}
+.team-sec-head__info .total-team h4 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 0;
+}
+
+/* Team Details  */
+.tc-td-info {
+  margin-left: 56px;
+}
+.tc-td-info__person .name {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 58px;
+  color: var(--title-color);
+  display: block;
+}
+.tc-td-info__person .designation {
+  color: var(--title-color);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  display: block;
+  margin-top: 8px;
+}
+.tc-td-info__desc {
+  margin-top: 36px;
+}
+.tc-td-info__portfolio {
+  margin-top: 36px;
+}
+.tc-td-info__portfolio .title {
+  color: var(--title-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.tc-td-info__portfolio ul li {
+  display: inline-block;
+  align-items: center;
+  margin-right: 8px;
+}
+.tc-td-info__portfolio ul li:last-child {
+  margin: 0;
+}
+
+.tc-td-info__portfolio ul li a {
+  padding: 4px 16px;
+  background: #f3f4f6;
+  color: var(--title-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+}
+.tc-td-info__portfolio ul li a:hover {
+  background: var(--title-color);
+  color: var(--white-color);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tc-team-cta__cont-btm {
+    margin-top: 40px;
+  }
+  .team-sec-head {
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .team-sec-head .title {
+    font-size: 48px;
+    line-height: 120%;
+  }
+  .tc-td-info {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .tc-td-info__person .name {
+    font-size: 40px;
+    line-height: 120%;
+  }
+  .tc-td-info__desc {
+    margin-top: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .tc-team__item {
+    margin-top: 40px;
+  }
+  .tc-team__name {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .tc-team__info {
+    margin-top: 16px;
+  }
+  .tc-team-cta {
+    padding: 24px;
+    margin-top: 40px;
+  }
+  .tc-team-cta__title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .tc-team-cta__cont-btm {
+    margin-top: 16px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .tc-team-cta__number .big-number {
+    font-size: 40px;
+    line-height: 120%;
+  }
+  .tc-team-cta__number .number-text {
+    line-height: 120%;
+  }
+  .team-sec-head {
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .team-sec-head .title {
+    font-size: 32px;
+    line-height: 120%;
+  }
+  .tc-td-info {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .tc-td-info__person .name {
+    font-size: 32px;
+    line-height: 120%;
+    margin-bottom: 8px;
+  }
+  .tc-td-info__person .designation {
+    font-size: 18px;
+  }
+  .tc-td-info__desc {
+    margin-top: 24px;
+  }
+  .tc-td-info__portfolio .title {
+    margin-bottom: 4px;
+  }
+  .tc-td-info__portfolio ul li {
+    margin-top: 8px !important;
+  }
+}
+
+/*============================================================================================
+	End Team Area
+==============================================================================================*/

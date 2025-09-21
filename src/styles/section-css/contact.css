@@ -1,0 +1,100 @@
+/*============================================================================================
+    Start Contact Area
+==============================================================================================*/
+
+.tc-contact__form {
+  background: #f9fafb;
+  border-radius: 32px;
+  padding: 60px;
+}
+.tc-contact__form .form-group {
+  margin-bottom: 20px;
+}
+.tc-contact__form .form-group input,
+.tc-contact__form .form-group textarea {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+  background: var(--white-color);
+  font-size: 16px;
+  color: var(--title-color);
+  line-height: 24px;
+  font-weight: 400;
+  padding: 16px 24px;
+}
+.tc-contact__form .form-group input:focus,
+.tc-contact__form .form-group textarea:focus {
+  border: 1px solid var(--primary-color);
+}
+.tc-contact__form .form-group textarea {
+  height: 148px;
+}
+.contact-form-btn {
+  margin-top: 40px;
+}
+
+.tc-contact__form .form-check {
+  min-height: auto;
+  margin-bottom: 0;
+}
+
+.tc-contact__form .form-check-input {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  margin-top: 0;
+  border: 1px solid #9ca3af;
+  cursor: pointer;
+}
+.tc-contact__form .form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.tc-contact__form .form-check-input[type="checkbox"] {
+  border-radius: 6px;
+}
+.tc-contact__form .form-check-input:focus {
+  box-shadow: none;
+}
+.tc-contact__form .form-check label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--title-color);
+  cursor: pointer;
+}
+.tc-contact__form .contact-form-text {
+  color: var(--paragraph-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 12px;
+}
+
+@media only screen and (max-width: 767px) {
+  .tc-contact__form {
+    padding: 24px;
+  }
+  .tc-contact__form .form-group input,
+  .tc-contact__form .form-group textarea {
+    height: 48px;
+    font-size: 14px;
+    padding: 16px;
+  }
+  .contact-form-btn {
+    margin-top: 24px;
+  }
+  .tc-contact__form .nice-select {
+    height: 48px;
+    line-height: 48px;
+  }
+  .tc-contact__form .form-group textarea {
+    height: 120px !important;
+  }
+}
+
+/*============================================================================================
+    End Contact Area
+==============================================================================================*/

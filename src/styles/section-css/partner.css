@@ -1,0 +1,87 @@
+/*================================================================================================
+    Start Partner Area
+===================================================================================================*/
+.tc-partner {
+  overflow: hidden;
+}
+.tc-partner .container {
+  max-width: 1500px;
+}
+.tc-partner .tc-sec-head__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+.tc-partner .tc-sec-head__text {
+  font-weight: 400;
+  color: var(--paragraph-color);
+}
+.tc-partner__inner {
+  position: relative;
+  margin-top: 20px;
+}
+.tc-partner__inner::before {
+  position: absolute;
+  content: "";
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #fff 28.5%);
+  width: 118px;
+  height: 96px;
+  top: -30px;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.tc-partner__inner::after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(-270deg, rgba(255, 255, 255, 0) 0%, #fff 28.5%);
+  width: 118px;
+  height: 96px;
+  top: -30px;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+.tc-partner__slider .swiper-wrapper {
+  transition-timing-function: linear;
+}
+.tc-partner__slider .swiper-slide {
+  text-align: center;
+}
+.tc-partner__slider .swiper-slide img {
+  max-width: 132px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Style 2  */
+.tc-partner__inner.style-2::before {
+  background: linear-gradient(270deg, rgba(249, 250, 251, 0) 0%, #f9fafb 28.5%);
+}
+.tc-partner__inner.style-2::after {
+  background: linear-gradient(
+    -270deg,
+    rgba(249, 250, 251, 0) 0%,
+    #f9fafb 28.5%
+  );
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+  .tc-partner .container {
+    max-width: 1170px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .tc-partner__inner::before {
+    width: 40px;
+  }
+  .tc-partner__inner::after {
+    width: 40px;
+  }
+}
+
+/*================================================================================================
+    End Partner Area
+===================================================================================================*/

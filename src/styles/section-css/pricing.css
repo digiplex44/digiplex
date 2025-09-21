@@ -1,0 +1,92 @@
+/*============================================================================================
+	Start Pricing Area
+==============================================================================================*/
+
+.tc-pricing .tc-sec-head__text {
+  color: var(--paragraph-color);
+  margin-top: 20px;
+}
+
+.pricing-card {
+  border-radius: 20px;
+  background: #f9fafb;
+  padding: 36px;
+  margin-top: 20px;
+}
+
+.pricing-head .title {
+  color: var(--title-color);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+.pricing-head .price {
+  color: var(--title-color);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58px;
+  margin-bottom: 8px;
+}
+
+.pricing-head .duration {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--paragraph-color);
+  display: block;
+}
+
+.pricing-info {
+  margin-top: 32px;
+}
+
+.pricing-features {
+  margin-top: 32px;
+}
+
+.pricing-features ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--title-color);
+}
+
+.pricing-features ul li:last-child {
+  margin: 0;
+}
+.pricing-btn {
+  margin-top: 32px;
+}
+.pricing-btn .theme-btn {
+  display: flex;
+}
+.pricing-btn .theme-btn:hover {
+  background: var(--secondary-color) !important;
+  color: var(--title-color) !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .pricing-card {
+    padding: 24px;
+  }
+  .pricing-head .price {
+    font-size: 40px;
+    line-height: 120%;
+  }
+  .pricing-head .title {
+    margin-bottom: 8px;
+  }
+  .pricing-info {
+    margin-top: 12px;
+  }
+  .pricing-features {
+    margin-top: 24px;
+  }
+}
+
+/*============================================================================================
+	End Pricing Area
+==============================================================================================*/

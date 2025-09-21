@@ -1,0 +1,307 @@
+/*============================================================================================
+	Start Sidebar Popup CSS
+==============================================================================================*/
+
+#sidebar-overlay,
+.sidebar-trigger,
+.sidebar-area {
+  display: none;
+}
+.sidebar-trigger {
+  display: block;
+}
+.sidebar-trigger.close {
+  color: var(--title-color);
+}
+.sidebar-area {
+  background-color: var(--white-color);
+  position: fixed !important;
+  right: -100%;
+  top: 0;
+  width: 450px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: auto;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  padding: 40px;
+  z-index: 999999;
+}
+.open-sidebar .sidebar-area {
+  right: 0;
+  visibility: visible;
+}
+
+#sidebar-overlay {
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  transition: all 0s ease-in-out;
+  width: 100%;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+#sidebar-overlay::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -100%;
+	width: 100%;
+	height: 100%;
+	background: #0003;
+	z-index: 9998;
+	transition: all 0.5s ease-in-out;
+}
+.open-sidebar #sidebar-overlay {
+  opacity: 1;
+  z-index: 9999;
+  transition: all 0.6s ease-in-out;
+  transition-delay: 0.3s;
+  transition: all 0.5s ease-in-out;
+}
+.open-sidebar #sidebar-overlay::before {
+  right: 0;
+}
+
+@media (max-width: 992px) {
+  .sidebar-content .list-post-area.list-2 {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+  .sidebar-area {
+    width: 100%;
+    justify-content: center;
+  }
+  .side-menu-wrap {
+    margin: 60px 0px;
+  }
+  .side-menu-header h3 {
+    display: none;
+  }
+  .side-menu-list li a {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .sidebar-area {
+    width: 400px;
+  }
+}
+
+.side-menu-about {
+  margin: 50px 0 50px 0;
+}
+@media only screen and (max-width: 992px) {
+  .side-menu-about {
+    display: none;
+  }
+}
+.side-menu-header h3 {
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0;
+}
+.side-menu-content .side-menu-header,
+.side-menu-about .side-menu-header {
+  margin-bottom: 20px;
+}
+.side-menu-about .theme-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--title-color) !important;
+  margin-top: 24px;
+}
+.side-menu-about .theme-btn:hover {
+  border: 1px solid transparent;
+  color: var(--white-color) !important;
+}
+
+.side-menu-list {
+  margin: 25px 0 35px 0;
+}
+
+.side-menu-list li {
+  display: flex;
+  align-items: center;
+}
+
+.side-menu-list li:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.side-menu-list li i {
+  background-color: var(--primary-color);
+  font-size: 16px;
+  color: var(--white-color);
+  width: 40px;
+  height: 40px;
+  line-height: 44px;
+  text-align: center;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.side-menu-list li:hover i {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.side-menu-list li a {
+  font-size: 16px;
+  color: var(--title-color);
+  padding-left: 10px;
+}
+.side-menu-list li a:hover {
+  color: var(--primary-color);
+}
+
+.side-menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.side-menu-content .side-menu-header {
+  font-size: 30px;
+  max-width: 600px;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Meanmenu CSS  */
+.mean-bar {
+  background-color: transparent;
+  min-height: auto;
+  padding: 0;
+}
+.mean-bar .meanmenu-reveal {
+  display: none !important;
+}
+.mean-bar .mean-nav {
+  background-color: transparent;
+  margin-top: 0;
+}
+@media (min-width: 993px) {
+  .mean-bar .mean-nav {
+    padding-top: 0;
+  }
+}
+.mean-bar .mean-nav.mean-nav > ul {
+  display: block !important;
+}
+.mean-bar .mean-nav.mean-nav > ul li {
+  position: relative;
+  float: none;
+  display: block;
+  width: auto;
+}
+.mean-bar .mean-nav.mean-nav > ul li:not(:last-of-type) {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+.mean-bar .mean-nav.mean-nav > ul li a {
+  color: var(--title-color);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  border-top: none;
+  padding: 0;
+  float: none;
+}
+@media only screen and (max-width: 767px) {
+  .mean-bar .mean-nav.mean-nav > ul li a {
+    font-size: 14px;
+  }
+}
+.mean-bar .mean-nav.mean-nav > ul li a.mean-expand {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  position: absolute;
+  padding: 0;
+  top: 0px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 993px) {
+  .mean-bar .mean-nav.mean-nav > ul li a.mean-expand {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+.mean-bar .mean-nav.mean-nav > ul li a.mean-expand:before,
+.mean-bar .mean-nav.mean-nav > ul li a.mean-expand:after {
+  font-size: 10px;
+  font-family: uicons-regular-rounded !important;
+  font-weight: 500;
+}
+.mean-bar .mean-nav.mean-nav > ul li a.mean-expand:before {
+  content: "\f8d8";
+}
+.mean-bar .mean-nav.mean-nav > ul li a.mean-expand.mean-clicked {
+  background-color: var(--title-color);
+  color: var(--white-color);
+}
+.mean-bar .mean-nav.mean-nav > ul li a.mean-expand.mean-clicked:after {
+  content: "\f7e2";
+}
+.mean-bar .mean-nav.mean-nav > ul li a.mean-expand.mean-clicked:before {
+  display: none;
+}
+.mean-bar .mean-nav.mean-nav > ul li a.mean-expand i {
+  display: none;
+}
+.mean-bar .mean-nav.mean-nav > ul li ul {
+  padding: 0 0 0 16px;
+  margin-top: 16px;
+}
+.mean-bar .mean-nav.mean-nav > ul li ul li:not(:last-of-type) {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 993px) {
+  .mean-bar .mean-nav.mean-nav > ul li ul li:not(:last-of-type) {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+  }
+}
+.mean-bar .mean-nav.mean-nav > ul li ul li a {
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: block;
+  color: var(--paragraph-color);
+}
+.mean-bar .mean-nav.mean-nav > ul li ul li a:hover {
+  color: var(--primary-color);
+}
+@media (min-width: 993px) {
+  .mean-bar .mean-nav.mean-nav > ul li ul li a {
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .mean-bar .mean-nav.mean-nav > ul li ul li a {
+    font-size: 14px;
+  }
+}
+
+/*============================================================================================
+	End Sidebar Popup CSS
+==============================================================================================*/

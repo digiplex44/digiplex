@@ -1,0 +1,60 @@
+/*================================================================================================
+    Start 404 Area
+===================================================================================================*/
+.error-content {
+  text-align: center;
+}
+.error-content h3 {
+  color: var(--title-color);
+  text-align: center;
+  font-size: 220px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.error-content p {
+  color: var(--title-color);
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.error-content span {
+  display: block;
+  color: var(--paragraph-color);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: 20px;
+}
+.error-btn {
+  margin-top: 40px;
+}
+.error-btn .theme-btn {
+  background: var(--secondary-color);
+  color: var(--title-color) !important;
+}
+.error-btn .theme-btn:hover {
+  background: var(--title-color);
+  color: var(--white-color) !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .error-content h3 {
+    font-size: 80px;
+  }
+  .error-content p {
+    font-size: 24px !important;
+    line-height: 120%;
+  }
+  .error-btn {
+    margin-top: 24px;
+  }
+}
+
+/*================================================================================================
+    End 404 Area
+===================================================================================================*/

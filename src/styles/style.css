@@ -1,0 +1,29 @@
+@import url("./plugins-css/bootstrap.min.css");
+@import url("./plugins-css/animate.min.css");
+/* @import url("./plugins-css/owl.carousel.min.css"); */
+@import url("./plugins-css/swiper-bundle.min.css");
+@import url("./plugins-css/maginific-popup.min.css");
+@import url("./plugins-css/nice-select.min.css");
+@import url("./plugins-css/fancybox.min.css");
+@import url("./plugins-css/uicons.min.css");
+
+@import url("./section-css/reset.css");
+@import url("./section-css/header.css");
+@import url("./section-css/hero.css");
+@import url("./section-css/text-move.css");
+@import url("./section-css/features.css");
+@import url("./section-css/about.css");
+@import url("./section-css/partner.css");
+@import url("./section-css/video.css");
+@import url("./section-css/portfolio.css");
+@import url("./section-css/service.css");
+@import url("./section-css/team.css");
+@import url("./section-css/testimonial.css");
+@import url("./section-css/pricing.css");
+@import url("./section-css/blog.css");
+@import url("./section-css/call-action.css");
+@import url("./section-css/contact.css");
+@import url("./section-css/faq.css");
+@import url("./section-css/404.css");
+@import url("./section-css/footer.css");
+@import url("./section-css/sidebar-popup.css");

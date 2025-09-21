@@ -1,0 +1,116 @@
+/*============================================================================================
+	Start Text Move Area
+==============================================================================================*/
+.tc-text-move {
+  padding: 24px 0px;
+  background-color: var(--secondary-color);
+}
+.tc-text-move .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+.tc-text-move .swiper-slide {
+  width: auto;
+}
+.tc-text-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.tc-text-slide__title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--title-color);
+  text-transform: uppercase;
+}
+.tc-text-slide .brust-pucker {
+  max-width: 20px;
+}
+
+/* Style 2  */
+.tc-text-move--style2 {
+  padding: 0px 0px 130px !important;
+}
+.tc-text-move__slider-reverse {
+  margin-top: 30px;
+}
+.tc-text-move--style2 .tc-text-slide__title {
+  font-size: 100px;
+  line-height: normal;
+  text-transform: capitalize;
+  position: relative;
+}
+.tc-text-move--style2 .tc-text-slide {
+  display: block;
+}
+.tc-text-slide__btn {
+  border-radius: 100px;
+  background: var(--secondary-color);
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+.tc-text-slide:hover .tc-text-slide__btn {
+  opacity: 1;
+  visibility: visible;
+}
+.tc-text-slide__btn:hover {
+  background: var(--primary-color);
+}
+.tc-text-slide__btn svg path {
+  transition: all 0.4s ease;
+}
+.tc-text-slide__btn:hover svg path {
+  stroke: var(--white-color);
+}
+
+/* Style 3  */
+.tc-text-move.style-3 .tc-text-slide__title {
+  font-size: 48px;
+  line-height: 58px;
+  text-transform: capitalize;
+}
+.tc-text-move.style-3 .tc-text-slide .brust-pucker {
+  max-width: 24px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tc-text-move--style2 {
+    padding: 0px 0px 56px !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .tc-text-move--style2 .tc-text-slide__title {
+    font-size: 48px;
+  }
+  .tc-text-move--style2 {
+    padding: 0px 0px 56px !important;
+  }
+  .tc-text-move__slider-reverse {
+    margin-top: 16px;
+  }
+  .tc-text-slide__btn {
+    padding: 12px;
+    margin-top: -24px;
+    margin-left: -24px;
+  }
+  .tc-text-slide__btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  .tc-text-move.style-3 .tc-text-slide__title {
+    font-size: 32px;
+  }
+}
+
+/*============================================================================================
+	End Text Move Area
+==============================================================================================*/
