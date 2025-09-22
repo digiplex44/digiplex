@@ -2,12 +2,12 @@
 	Start Footer Area
 ==============================================================================================*/
 .tc-footer {
-  padding-bottom: 0px;
+  padding-bottom: 40px;
 }
 .tc-footer__inner {
   max-width: 100%;
-  margin: 0;
-  border-radius: 40px 40px 0 0;
+  margin: 0 40px;
+  border-radius: 40px;
 }
 
 .tc-footer__top {

@@ -222,6 +222,12 @@
   }
 }
 
+@media only screen and (max-width: 992px) {
+  .tc-header-nav {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .tc-header {
     margin-top: 16px;

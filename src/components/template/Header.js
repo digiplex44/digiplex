@@ -89,6 +89,7 @@ export const Header = ({ onSearchClick, onSidebarClick }) => {
             >
               Search
             </button>
+            {/* Hamburger */}
             <button 
               onClick={onSidebarClick}
               className="menu-btn sidebar-trigger open"
