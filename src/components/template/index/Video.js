@@ -1,36 +1,22 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 
-export default function VideoSection() {
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+import AnimatedElement from "@/components/animation/AnimatedElement";
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect(); // ne déclenche qu’une fois
-          }
-        });
-      },
-      { threshold: 0.2 } // déclenche quand 20% visible
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
-
+export default function VideoSection({
+  titlePrefix,
+  titleMain,
+  videoUrl,
+  buttonImage = "assets/images/video/video-btn-img.png",
+  speakerName,
+  speakerRole, 
+}) {
   return (
-    <section
-      ref={sectionRef}
-      className={`tc-video ${isVisible ? "slide-up" : ""}`}
+    <AnimatedElement
+      as="section"
+      className="tc-video"
+      animation="slideUp"
+      duration={0.8}
+      threshold={0.2}
     >
       <div className="container">
         <div
@@ -71,22 +57,15 @@ export default function VideoSection() {
                     </clipPath>
                   </defs>
                 </svg>
-                Hulo created
+                {titlePrefix}
               </span>
-              something better than I ever <br />
-              could have imagined
+             {titleMain}
             </h3>
           </div>
 
           <div className="tc-video-action">
-            <a
-              href="https://www.youtube.com/watch?v=gyGsPlt06bo"
-              className="tc-video-btn popup-video"
-            >
-              <img
-                src="assets/images/video/video-btn-img.png"
-                alt="video-btn-img"
-              />
+            <a href={videoUrl} className="tc-video-btn popup-video">
+              <img src={buttonImage} alt="video-btn-img" />
               <svg
                 width="13"
                 height="17"
@@ -112,28 +91,16 @@ export default function VideoSection() {
                 </defs>
               </svg>
             </a>
+
             <div className="tc-video-btn__info">
-              <h5>Hear from Andy</h5>
-              <p>Co-Founder of Hulo Agency</p>
+              <h5>{speakerName}</h5>
+              <p>{speakerRole}</p>
             </div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        /* Avant animation */
-        .tc-video {
-          opacity: 0;
-          transform: translateY(40px);
-          transition: all 0.8s ease-out;
-        }
-
-        /* Quand visible */
-        .tc-video.slide-up {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      `}</style>
-    </section>
+    </AnimatedElement>
   );
 }
+
+

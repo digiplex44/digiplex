@@ -1,0 +1,54 @@
+- link and img corrections
+- transform to tailwind
+
+
+const portfolioItems = [
+        {
+            id: 'item-1',
+            image: 'assets/images/portfolio/portfolio-1.png',
+            year: '2026',
+            author: 'Gary Neville',
+            title: 'Refreshing Gary Neville\'s Digital Presence',
+            delay: 0.3
+        },
+        {
+            id: 'item-2',
+            image: 'assets/images/portfolio/portfolio-2.png',
+            year: '2026',
+            author: 'Gary Neville',
+            title: 'Brand Identity Design for Startup',
+            delay: 0.5
+        },
+        {
+            id: 'item-3',
+            image: 'assets/images/portfolio/portfolio-3.png',
+            year: '2026',
+            author: 'Zenifer Lofez',
+            title: 'Packaging Mockup for Startup',
+            delay: 0.3
+        },
+        {
+            id: 'item-4',
+            image: 'assets/images/portfolio/portfolio-4.png',
+            year: '2026',
+            author: 'Terio Zemip',
+            title: 'Crafted Payment Gateway',
+            delay: 0.5
+        },
+        {
+            id: 'item-5',
+            image: 'assets/images/portfolio/portfolio-5.png',
+            year: '2025',
+            author: 'Andrio Gethary',
+            title: 'Reimagining the built environment',
+            delay: 0.3
+        },
+        {
+            id: 'item-6',
+            image: 'assets/images/portfolio/portfolio-6.png',
+            year: '2025',
+            author: 'Mellar Pitter',
+            title: 'Forma bringing architectural ideas to life',
+            delay: 0.5
+        }
+    ];

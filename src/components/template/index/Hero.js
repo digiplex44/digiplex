@@ -1,5 +1,8 @@
 "use client";
 
+import AnimatedElement from "@/components/animation/AnimatedElement";
+import AnimatedText from "@/components/animation/AnimatedText";
+
 export default function HeroSection({
   title,
   text,
@@ -20,67 +23,82 @@ export default function HeroSection({
         <div className="tc-hero__inner">
           {/* Texte */}
           <div className="tc-hero-cont">
-            <h1 className="tc-hero-cont__title slide-in">
-              {title}
+            <AnimatedElement
+              as="h1"
+              className="tc-hero-cont__title"
+              animation="slideLeft"
+              duration={1}
+              delay={0}
+            >
+              <AnimatedText 
+                text={title}
+                wordDelay={150}
+              />
               <div
                 className="border-line"
                 data-fade-from="right"
                 data-duration="3"
               ></div>
-            </h1>
-            <p className="tc-hero-cont__text slide-in delay-1">{text}</p>
-            <div
-              className="tc-hero-cont__btn slide-in delay-2"
+            </AnimatedElement>
+
+            <AnimatedElement
+              as="p"
+              className="tc-hero-cont__text"
+              animation="slideLeft"
+              duration={0.8}
+              delay={300}
+            >
+              {text}
+            </AnimatedElement>
+
+            <AnimatedElement
+              className="tc-hero-cont__btn"
+              animation="slideLeft"
+              duration={0.8}
+              delay={600}
             >
               <a href={buttonLink} className="theme-btn">
                 {buttonText}
               </a>
-            </div>
+            </AnimatedElement>
           </div>
 
           {/* Images */}
           <div className="tc-hero-image">
-            <div className="h-main-img">
+            <AnimatedElement
+              className="h-main-img"
+              animation="fadeIn"
+              duration={1.2}
+              delay={200}
+            >
               <img src={mainImage} alt="hero-img" />
-            </div>
-            <div className="circle-ball">
+            </AnimatedElement>
+
+            <AnimatedElement
+              className="circle-ball"
+              animation="scaleIn"
+              duration={1}
+              delay={400}
+            >
               <img className="text spinner-ani" src={circleTextImage} alt="circle-text" />
               <img className="ball" src={circleBallImage} alt="circle-ball" />
-            </div>
-            <div className="rectangle-shape">
+            </AnimatedElement>
+
+            <AnimatedElement
+              className="rectangle-shape"
+              animation="rotateIn"
+              duration={1}
+              delay={600}
+            >
               <img
                 className="ball element-move"
                 src={rectangleShapeImage}
                 alt="rectangle-shape"
               />
-            </div>
+            </AnimatedElement>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        /* Animation "slide-in" */
-        .slide-in {
-          opacity: 0;
-          transform: translateX(40px);
-          animation: slideIn 1s ease-out forwards;
-        }
-
-        .slide-in.delay-1 {
-          animation-delay: 0.3s;
-        }
-
-        .slide-in.delay-2 {
-          animation-delay: 0.6s;
-        }
-
-        @keyframes slideIn {
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
     </section>
   );
 }

@@ -67,6 +67,7 @@
   height: 250px;
   background: var(--border-color);
   display: block;
+  background-color: transparent;
 }
 .tc-about-desc {
   width: 400px;

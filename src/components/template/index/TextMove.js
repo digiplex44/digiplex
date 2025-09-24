@@ -2,7 +2,6 @@
 
 export default function TextMoveSection({ textItems }) {
 
-  // Dupliquer les items pour le défilement continu
   const duplicatedItems = [...textItems, ...textItems];
 
   return (

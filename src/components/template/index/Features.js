@@ -1,36 +1,10 @@
 "use client";
-import { useEffect, useRef } from "react";
 
-export default function FeaturesSection({ items }) {
-  const sectionRef = useRef(null);
+import AnimatedElement from "@/components/animation/AnimatedElement";
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const items = section.querySelectorAll(".tc-feature__item");
-
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            entry.target.style.animationDelay = `${index * 0.2}s`;
-            entry.target.classList.add("slide-up");
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    items.forEach((item) => observer.observe(item));
-
-    return () => observer.disconnect();
-  }, []);
-
+export default function FeaturesSection({ items, actionText }) {
   return (
     <section
-      ref={sectionRef}
       className="tc-features bg-black section-gap-2 bg-img"
       style={{
         backgroundImage: 'url("/assets/images/features/bg-dotted-shape.png")',
@@ -39,11 +13,19 @@ export default function FeaturesSection({ items }) {
       <div className="container">
         <div className="tc-features__wrapper">
           {items.map((item, index) => (
-            <div key={index} className="tc-feature__item">
+            <AnimatedElement
+              key={index}
+              className="tc-feature__item"
+              animation="slideUp"
+              duration={0.8}
+              delay={index * 200}
+              threshold={0.2}
+              triggerOnce={true}
+            >
               <h3 className="tc-feature__title">{item.title}</h3>
               <p className="tc-feature__text">{item.text}</p>
               <a href={item.link} className="tc-feature__btn">
-                Start Here
+                {actionText}
                 <svg
                   width="21"
                   height="20"
@@ -59,28 +41,10 @@ export default function FeaturesSection({ items }) {
                   />
                 </svg>
               </a>
-            </div>
+            </AnimatedElement>
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .tc-feature__item {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-
-        .slide-up {
-          animation: slideUp 0.8s ease-out forwards;
-        }
-
-        @keyframes slideUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 }

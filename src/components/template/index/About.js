@@ -1,151 +1,122 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 
-export default function AboutSection() {
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [count, setCount] = useState(0);
+import AnimatedElement from "@/components/animation/AnimatedElement";
+import AnimatedText from "@/components/animation/AnimatedText";
+import AnimatedCounter from "@/components/animation/AnimatedCounter";
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(section);
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let start = 3;
-    const end = 15;
-    const duration = 1500; // ms
-    const stepTime = Math.abs(Math.floor(duration / end));
-
-    const timer = setInterval(() => {
-      start += 1;
-      setCount(start);
-      if (start === end) clearInterval(timer);
-    }, stepTime);
-
-    return () => clearInterval(timer);
-  }, [isVisible]);
-
+export default function AboutSection({
+  sectionSubtitle,
+  sectionTitle,
+  counterText,
+  description,
+  buttonLabel,
+  buttonLink
+}) {
   return (
-    <section ref={sectionRef} className="tc-about section-gap">
+    <section className="tc-about section-gap">
       <div className="container">
         <div className="tc-sec-head">
-          <p className="tc-sec-head__sm-title mb-0">
-            <span className="dot"></span>Who we are
-          </p>
+          <AnimatedElement
+            as="p"
+            className="tc-sec-head__sm-title mb-0"
+            animation="fadeIn"
+            duration={0.6}
+          >
+            <span className="dot"></span>
+            {sectionSubtitle}
+          </AnimatedElement>
 
-          {/* Titre ligne par ligne */}
-          <h3 className="tc-sec-head__title">
-            {"We provide brilliant idea to grow the startup — agency with your sharp brand."
-              .split(" ")
-              .map((word, i) => (
-                <span
-                  key={i}
-                  className={`word ${isVisible ? "slide-in" : ""}`}
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                >
-                  {word}&nbsp;
-                </span>
-              ))}
-          </h3>
+          <AnimatedText
+            as="h3"
+            className="tc-sec-head__title"
+            text={sectionTitle}
+            wordDelay={100}
+            threshold={0.1}
+          />
         </div>
 
         <div className="tc-about__inner">
-          <div className="tc-about-bubble">
+          <AnimatedElement
+            className="tc-about-bubble"
+            animation="scaleIn"
+            duration={1}
+            delay={200}
+          >
             <img
               className="spinner-ani"
               src="assets/images/about/bubble.svg"
               alt="bubble"
             />
-          </div>
+          </AnimatedElement>
 
           <div className="tc-about-cont">
             {/* Bloc compteur */}
-            <div className="tc-about-cont__widget">
+            <AnimatedElement
+              className="tc-about-cont__widget"
+              animation="slideUp"
+              duration={0.8}
+              delay={300}
+              threshold={0.5}
+            >
               <div className="tc-about-number">
                 <h2 className="big-number">
-                  <span className="counter">{count}</span>
-                  <small>M</small>
+                  <AnimatedCounter
+                    start={0}
+                    end={50}
+                    duration={1000}
+                    suffix=""
+                    threshold={0.5}
+                    className="counter"
+                  />
                 </h2>
-                <p className={`number-text ${isVisible ? "slide-up" : ""}`}>
-                  We helped to get companies with $15M+ funding
-                </p>
+                <AnimatedElement
+                  as="p"
+                  className="number-text"
+                  animation="slideUp"
+                  duration={0.8}
+                  delay={800}
+                  threshold={0.5}
+                >
+                  {counterText}
+                </AnimatedElement>
               </div>
-            </div>
+            </AnimatedElement>
 
             <div className="seperator-line"></div>
 
             {/* Bloc description */}
-            <div className="tc-about-cont__widget">
-              <div className={`tc-about-desc ${isVisible ? "slide-up" : ""}`}>
-                <p className="desc-text">
-                  Consumers today rely heavily on digital means to research
-                  products. We research a brand of blend engaging with it,
-                  according to the meanwhile, 51% of consumers
-                </p>
-                <div className="tc-about-btn">
-                  <a href="about.html" className="theme-btn">
-                    Explore Us More
+            <AnimatedElement
+              className="tc-about-cont__widget"
+              animation="slideUp"
+              duration={0.8}
+              delay={400}
+              threshold={0.5}
+            >
+              <div className="tc-about-desc">
+                <AnimatedElement
+                  as="p"
+                  className="desc-text"
+                  animation="slideUp"
+                  duration={0.8}
+                  delay={500}
+                >
+                  {description}
+                </AnimatedElement>
+                <AnimatedElement
+                  className="tc-about-btn"
+                  animation="slideUp"
+                  duration={0.8}
+                  delay={700}
+                >
+                  <a href={buttonLink} className="theme-btn">
+                    {buttonLabel}
                   </a>
-                </div>
+                </AnimatedElement>
               </div>
-            </div>
+            </AnimatedElement>
           </div>
         </div>
       </div>
-
-      {/* Animations */}
-      <style jsx>{`
-        .word {
-          display: inline-block;
-          opacity: 0;
-          transform: translateX(40px);
-        }
-        .word.slide-in {
-          animation: slideIn 0.6s ease-out forwards;
-        }
-
-        .counter {
-          display: inline-block;
-        }
-
-        .number-text,
-        .tc-about-desc {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: all 0.8s ease-out;
-        }
-        .number-text.slide-up,
-        .tc-about-desc.slide-up {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        @keyframes slideIn {
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
     </section>
   );
 }

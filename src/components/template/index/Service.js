@@ -1,19 +1,22 @@
-export default function ServiceSection() {
+import AnimatedElement from "@/components/animation/AnimatedElement";
+
+export default function ServiceSection({ header, services }) {
     return (
         <section className="tc-service bg-black section-gap">
             <div className="container">
                 <div className="tc-service__inner">
                     <div className="tc-sec-head">
-                        <div className="tc-sec-head__main">
-                            <p className="tc-sec-head__sm-title text-white"><span className="dot white"></span>Our Services</p>
-                            <h3 className="tc-sec-head__title text-white has_word_anim">What we offer</h3>
-                        </div>
-                        <p className="tc-sec-head__text has_word_anim">
-                            With every single one of our clients we bring forth a deep passion for
-                            <b> creative problem solving innovations</b> forward thinking brands boundaries
-                        </p>
-                        <a href="service.html" className="tc-sec-head__btn theme-btn border-btn wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
-                            Explore All
+                        <AnimatedElement as="div" className="tc-sec-head__main" animation="slideLeft">
+                            <p className="tc-sec-head__sm-title text-white"><span className="dot white"></span>{header.smallTitle}</p>
+                            <h3 className="tc-sec-head__title text-white has_word_anim">{header.title}</h3>
+                        </AnimatedElement>
+
+                        <AnimatedElement as="div" animation="slideLeft" className="tc-sec-head__text has_word_anim">
+                            {header.description[0]} <b>{header.description[1]}</b> {header.description[2]}
+                        </AnimatedElement>
+
+                        <AnimatedElement as="a" href={header.button.link} className="tc-sec-head__btn theme-btn border-btn wow fadeInUp">
+                            {header.button.label}
                             <svg width="18" height="18" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     fillRule="evenodd"
@@ -22,18 +25,20 @@ export default function ServiceSection() {
                                     fill="white"
                                 />
                             </svg>
-                        </a>
+                        </AnimatedElement>
                     </div>
 
                     <div className="tc-service__wrapper">
-                        {/* Service Items */}
-                        {[
-                            { num: '01', title: 'Search Engine Optimization', img: 'service-1.png' },
-                            { num: '02', title: 'Email Marketing', img: 'service-2.png' },
-                            { num: '03', title: 'Digital Marketing', img: 'service-3.png' },
-                            { num: '04', title: 'Brand Marketing', img: 'service-4.png' }
-                        ].map((service, index) => (
-                            <div key={index} className="tc-service__item hobble wow fadeInUp" data-wow-delay={`.${3 + index * 2}s`} data-wow-duration="1s">
+                        {/* Service Items avec délai progressif */}
+                        {services.map((service, index) => (
+                            <AnimatedElement
+                                as="div"
+                                key={index}
+                                className="tc-service__item hobble"
+                                animation="slideUp"
+                                delay={index * 200}
+                                duration={0.6}
+                            >
                                 <div className="tc-service__item-inner">
                                     <div className="tc-service__item-info info-1">
                                         <div className="tc-service__item-img">
@@ -46,18 +51,18 @@ export default function ServiceSection() {
                                     </div>
                                     <div className="tc-service__item-info info-2">
                                         <p className="tc-service__item-desc">
-                                            We help brands stand out through aweful, elegant visual design. Our design mainly philosophy.
+                                            {service.description}
                                         </p>
                                     </div>
                                 </div>
                                 <div className="tc-service__item-action">
-                                    <a href="service-details.html" className="tc-service__item-btn hover-layer-2">
+                                    <a href={service.link} className="tc-service__item-btn hover-layer-2">
                                         <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10.8008 30.8252L30.8008 10.8252M30.8008 10.8252H15.8008M30.8008 10.8252V25.8252" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </a>
                                 </div>
-                            </div>
+                            </AnimatedElement>
                         ))}
                     </div>
                 </div>

@@ -1,28 +1,13 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 
-export default function PartnerSection() {
-  const textRef = useRef(null);
-  const [textVisible, setTextVisible] = useState(false);
+import AnimatedElement from "@/components/animation/AnimatedElement";
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setTextVisible(true);
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    if (textRef.current) observer.observe(textRef.current);
-  }, []);
-
-  const logos = [1, 2, 3, 4, 5, 6, 7];
-
-  // Dupliquer pour slider infini
+export default function PartnerSection({ 
+  title,
+  subTitle,
+  logos = [1, 2, 3, 4, 5, 6, 7] 
+}) {
+  // On duplique pour créer l'effet d'infinite scroll
   const duplicatedLogos = [...logos, ...logos];
 
   return (
@@ -30,13 +15,14 @@ export default function PartnerSection() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-12">
-            <div className="tc-sec-head text-center" ref={textRef}>
-              <h3 className={`tc-sec-head__title ${textVisible ? "slide-right" : ""}`}>
-                Worlds Most Popular Companies Trust Us
-              </h3>
-              <p className={`tc-sec-head__text ${textVisible ? "slide-right delay-1" : ""}`}>
-                Connect with us & let's build something cool together
-              </p>
+            <div className="tc-sec-head text-center">
+              <AnimatedElement as="h3" className="tc-sec-head__title" animation="slideLeft" duration={0.8} threshold={0.2}>
+                {title}
+              </AnimatedElement>
+
+              <AnimatedElement as="p" className="tc-sec-head__text" animation="slideLeft" duration={0.8} delay={0.3} threshold={0.2}>
+                {subTitle}
+              </AnimatedElement>
             </div>
           </div>
         </div>
@@ -46,7 +32,7 @@ export default function PartnerSection() {
             <div className="tc-partner__slider-track">
               {duplicatedLogos.map((num, idx) => (
                 <div key={idx} className="tc-partner__slide">
-                  <img src={`assets/images/partners/partner-${num}.svg`} alt="partner" />
+                  <img src={`assets/images/partners/partner-${num}.svg`} alt={`partner-${num}`} />
                 </div>
               ))}
             </div>
@@ -55,27 +41,11 @@ export default function PartnerSection() {
       </div>
 
       <style jsx>{`
-        /* Texte droite->gauche */
-        .slide-right {
-          opacity: 0;
-          transform: translateX(40px);
-          animation: slideRight 0.8s forwards;
-        }
-        .slide-right.delay-1 {
-          animation-delay: 0.3s;
-        }
-        @keyframes slideRight {
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
         /* Slider infini */
         .tc-partner__slider-wrapper {
           overflow: hidden;
           position: relative;
-          margin-top: 2rem;
+          margin-top: 0rem;
         }
         .tc-partner__slider-track {
           display: flex;
@@ -93,8 +63,12 @@ export default function PartnerSection() {
         }
 
         @keyframes scrollLeft {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
       `}</style>
     </section>
